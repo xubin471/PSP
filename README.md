@@ -469,7 +469,7 @@ Unless otherwise specified, all our experiments were conducted on the task Abd-M
 ## Visualization
 To demonstrate the superiority of our model, we compared the visual segmentation results of RobustEMD, FAMNet, DSM with those of our PSP.
 
-### Abd-CT -> Abd-MR
+### Abd-MR -> Abd-CT
 <!-- 这是一张图片，ocr 内容为： -->
 ![](https://cdn.nlark.com/yuque/0/2026/png/35053082/1771817764770-c5742da1-ed28-48ea-acc3-6d0d5ece8f01.png)
 
