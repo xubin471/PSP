@@ -477,11 +477,11 @@ To demonstrate the superiority of our model, we compared the visual segmentation
 
 ### Cardiac-bssFP -> Cardiac-LGE
 <!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/35053082/1771817928990-cdb5f0b0-2545-40b7-887a-067e93898669.png)
+![](./photos/Cardiac-bssFP2LGE.png)
 
 ### Cardiac-LGE -> Cardiac-bssFP
 <!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/35053082/1771817857405-a84497a0-357d-4799-ac41-eeb00081c4e1.png)
+![](./photos/Cardiac-LGE2bssFP.png)
 
 
 
