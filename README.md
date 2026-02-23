@@ -7,7 +7,7 @@ Few-Shot Medical Image Segmentation (FSMIS) offers a powerful solution to data s
 
 ## 💡Motivation
 <!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/35053082/1771817514497-cbd5af68-31d7-421a-8694-8482a6bbbc5a.png)
+![](./photos/motivation.png)
 
 We observe a key medical characteristic: although imaging textures vary drastically across modalities, the anatomical position and geometric shape of the same organ remain highly consistent between support and query images. This indicates that position and shape serve as ideal "cross-domain invariants". Effectively harnessing these anatomical priors can guide the model to break free from excessive reliance on domain-specific features, thereby achieving robust segmentation. Regardless of the domain, the support and query images exhibit high consistency in position (centroid coordinates) and shape (visualized by Turning Functions).
 
