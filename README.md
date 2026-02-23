@@ -13,7 +13,7 @@ We observe a key medical characteristic: although imaging textures vary drastica
 
 ## 🔍Overview of PSP
 <!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/35053082/1771816821127-62b04b92-03af-4daa-99b7-be2ef09fdbe6.png)
+![](./photos/framework.png)
 
 ## 🗝️Quick start
 ### 🔖1. Dependencies
