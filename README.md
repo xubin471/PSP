@@ -464,6 +464,76 @@ Unless otherwise specified, all our experiments were conducted on the task Abd-M
 <!-- 这是一张图片，ocr 内容为： -->
 ![](./photos/fourier_ablation.png)
 
+### Impact of the saling factor $\alpha$ in HPP module
+Impact of scaling factor $\alpha$  in HPP module on the performance of PSP (Abd-MR &rarr; CT) in Dice Score (%).
+
+<table>
+<thead>
+  <tr>
+    <th rowspan="2" align="center">Scaling factor</th>
+    <th colspan="5" align="center">Abd-MR &rarr; CT</th>
+  </tr>
+  <tr>
+    <th align="center">Liver</th> 
+    <th align="center">LK</th>
+    <th align="center">RK</th>
+    <th align="center">Spleen</th>
+    <th align="center">Mean</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td align="center">5</td>
+    <td align="center">74.43</td>
+    <td align="center">63.36</td>
+    <td align="center">66.56</td>
+    <td align="center">64.34</td>
+    <td align="center">67.17</td>
+  </tr>
+  <tr>
+    <td align="center">10</td>
+    <td align="center">73.96</td>
+    <td align="center">64.79</td>
+    <td align="center">67.10</td>
+    <td align="center">64.58</td>
+    <td align="center">67.59</td>
+  </tr>
+  <tr>
+    <td align="center">15</td>
+    <td align="center">72.73</td>
+    <td align="center">68.82</td>
+    <td align="center">67.73</td>
+    <td align="center">65.66</td>
+    <td align="center">68.73</td>
+  </tr>
+  <tr>
+    <td align="center">20</td>
+    <td align="center">73.44</td>
+    <td align="center">64.48</td>
+    <td align="center">69.17</td>
+    <td align="center">65.91</td>
+    <td align="center">68.25</td>
+  </tr>
+  <tr>
+    <td align="center">25</td>
+    <td align="center">70.86</td>
+    <td align="center">66.62</td>
+    <td align="center">66.95</td>
+    <td align="center">66.17</td>
+    <td align="center">67.65</td>
+  </tr>
+  <tr>
+    <td align="center">30</td>
+    <td align="center">71.23</td>
+    <td align="center">66.53</td>
+    <td align="center">65.97</td>
+    <td align="center">65.42</td>
+    <td align="center">67.29</td>
+  </tr>
+</tbody>
+</table>
+
+
 
 ## Visualization
 To demonstrate the superiority of our model, we compared the visual segmentation results of [<font style="color:rgb(9, 105, 218);">RobustEMD</font>](https://github.com/YazhouZhu19/RobustEMD)<font style="color:rgb(31, 35, 40);">, </font> [<font style="color:rgb(9, 105, 218);">FAMNet</font>](https://github.com/primebo1/FAMNet)<font style="color:rgb(31, 35, 40);">, </font> and [<font style="color:rgb(9, 105, 218);">DSM</font>](https://github.com/YazhouZhu19/DSM) with our PSP.
