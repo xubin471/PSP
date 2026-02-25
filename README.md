@@ -466,7 +466,7 @@ Unless otherwise specified, all our experiments were conducted on the task Abd-M
 
 
 ## Visualization
-To demonstrate the superiority of our model, we compared the visual segmentation results of RobustEMD, FAMNet, DSM with those of our PSP.
+To demonstrate the superiority of our model, we compared the visual segmentation results of [<font style="color:rgb(9, 105, 218);">SSL-RobustEMD</font>](https://github.com/YazhouZhu19/RobustEMD)<font style="color:rgb(31, 35, 40);">, </font> FAMNet, DSM with those of our PSP.
 ### Abd-CT -> Abd-MR
 ![](./photos/Abd-CT2MR.png)
 
