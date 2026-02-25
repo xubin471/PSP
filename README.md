@@ -462,8 +462,7 @@ Unless otherwise specified, all our experiments were conducted on the task Abd-M
 
 ### Effect of the number of low frequency components.
 <!-- 这是一张图片，ocr 内容为： -->
-![](https://cdn.nlark.com/yuque/0/2026/png/35053082/1771818458661-f31be63c-8502-4fa5-9166-5d795e23f452.png)
-
+![](./photos/fourier_ablation.png)
 
 
 ## Visualization
