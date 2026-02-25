@@ -466,7 +466,7 @@ Unless otherwise specified, all our experiments were conducted on the task Abd-M
 
 
 ## Visualization
-To demonstrate the superiority of our model, we compared the visual segmentation results of [<font style="color:rgb(9, 105, 218);">SSL-RobustEMD</font>](https://github.com/YazhouZhu19/RobustEMD)<font style="color:rgb(31, 35, 40);">, </font> FAMNet, DSM with those of our PSP.
+To demonstrate the superiority of our model, we compared the visual segmentation results of [<font style="color:rgb(9, 105, 218);">RobustEMD</font>](https://github.com/YazhouZhu19/RobustEMD)<font style="color:rgb(31, 35, 40);">, </font> [<font style="color:rgb(9, 105, 218);">FAMNet</font>](https://github.com/primebo1/FAMNet)<font style="color:rgb(31, 35, 40);">, </font> and [<font style="color:rgb(9, 105, 218);">DSM</font>](https://github.com/YazhouZhu19/DSM) with our PSP.
 ### Abd-CT -> Abd-MR
 ![](./photos/Abd-CT2MR.png)
 
