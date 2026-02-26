@@ -148,12 +148,10 @@ class FewShot(nn.Module):
         B, proto_num, C = protos.shape
         assert B == 1
 
-        # 1 计算每个原型与特征的相似度
         sim = -F.cosine_similarity(fts, protos[:,0,:][..., None, None], dim=1) * self.scaler #[B h w]
         pred = 1.0 - torch.sigmoid(0.5 * (sim - thresh))
         pred_ = pred.unsqueeze(1)
 
-        # 2 尺寸大小对齐到msk
         pred_ = F.interpolate(pred_, img_size, mode="bilinear", align_corners=False)
         pred_softmax = torch.cat([1-pred_,pred_],dim=1)
         return pred_softmax
