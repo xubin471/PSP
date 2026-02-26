@@ -15,42 +15,7 @@ from scipy.ndimage import distance_transform_edt, label, binary_fill_holes
 # import mahotas
 import numpy as np
 import cv2
-def keep_largest_component_by_cc(mask):
-    """
-    Args: mask:np (256 256)
-    使用连通域分析保留最大区域
-    """
-    mask = (mask>0.5).astype(np.uint8)
-    if mask.max() <= 1: mask = mask * 255
 
-    # 1. 连通域分析
-    # num_labels: 连通域数量 (包含背景)
-    # labels: 标记后的图 (0是背景, 1是第一个区域...)
-    # stats: 统计信息 [x, y, w, h, area]
-    # centroids: 质心
-    num_labels, labels, stats, centroids = cv2.connectedComponentsWithStats(mask, connectivity=8)
-
-    # [边界情况] 只有背景
-    if num_labels < 2:
-        return np.zeros_like(mask)
-
-    # 2. 找到最大区域的 label 索引
-    # stats[i, cv2.CC_STAT_AREA] 是第 i 个区域的面积
-    # 注意：label 0 是背景，一定要排除掉！
-    # argsort 排序后，取最后一个就是最大面积的索引
-    # stats[1:, 4] 取出除了背景外的所有面积
-    # np.argmax 返回的是基于切片后的索引，所以最后要 +1
-    max_label = 1 + np.argmax(stats[1:, cv2.CC_STAT_AREA])
-
-    # 3. 生成新掩码
-    new_mask = np.zeros_like(mask)
-    new_mask[labels == max_label] = 1 # 或者 255
-
-    return new_mask
-
-# =================================================================
-# 1. 工具函数：提取 SDM 和 Hu 矩特征
-# =================================================================
 def get_sdm_features(mask):
     """
     Input: mask (H, W) numpy array, 0 or 1
@@ -59,7 +24,6 @@ def get_sdm_features(mask):
     mask = mask>0
 
     # mask = keep_largest_component_by_cc(mask)
-    # 定义傅里叶描述子保留的低频分量个数
     NUM_FOURIER = 15
     TOTAL_DIM = 3 + NUM_FOURIER + 3
 
@@ -70,7 +34,7 @@ def get_sdm_features(mask):
     img_diagonal = np.sqrt(h_img ** 2 + w_img ** 2)/4 + 1e-6
 
     # ---------------------------------------------------------
-    # Part A: SDM 特征 (3维) - 描述内部厚度和均匀度
+    # Part A: SDM 
     # ---------------------------------------------------------
     dist_map = distance_transform_edt(mask)
     d_vals = dist_map[mask == 1]
@@ -78,46 +42,30 @@ def get_sdm_features(mask):
     if len(d_vals) == 0:
         sdm_feat = np.zeros(3)
     else:
-        # 归一化：除以对角线，使其落入 [0, 1] 区间
         sdm_feat = np.array([np.max(d_vals), np.mean(d_vals), np.std(d_vals)]) / img_diagonal
 
     # ---------------------------------------------------------
-    # Part B: 傅里叶描述子 (15维) - 描述轮廓形状 (低频)
+    # Part B: fft descriptor
     # ---------------------------------------------------------
     contours, _ = cv2.findContours(mask.astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
 
     if not contours:
         fourier_feat = np.zeros(NUM_FOURIER)
     else:
-        # 取最大的轮廓
         cnt = max(contours, key=cv2.contourArea)
-
-        # 将轮廓坐标 (x, y) 转换为复数 z = x + iy
-        # cnt shape: (N, 1, 2)
         cnt_pts = cnt[:, 0, :]
         contour_complex = np.empty(cnt_pts.shape[0], dtype=complex)
         contour_complex.real = cnt_pts[:, 0]
         contour_complex.imag = cnt_pts[:, 1]
 
-        # 1. 离散傅里叶变换 (DFT)
         fourier_result = np.fft.fft(contour_complex)
-
-        # 2. 取模长 (Magnitude) -> 获得旋转不变性
         descriptors = np.abs(fourier_result)
-
-        # 3. 尺度归一化 & 平移不变性
-        # descriptors[0] 是直流分量(位置信息)，我们不需要 -> 丢弃
-        # descriptors[1] 是基频分量(整体大小)，用它来做归一化
         if len(descriptors) > 1 and descriptors[1] > 0:
-            # 除以基频分量，消除尺度影响
             descriptors = descriptors / descriptors[1]
-            # 丢弃第一个分量(DC)
             descriptors = descriptors[1:]
         else:
             descriptors = np.zeros(NUM_FOURIER)
 
-        # 4. 截断或填充
-        # 我们只取前 NUM_FOURIER 个分量 (低频)，忽略后面的高频(噪声)
         if len(descriptors) < NUM_FOURIER:
             fourier_feat = np.pad(descriptors, (0, NUM_FOURIER - len(descriptors)))
         else:
