@@ -90,7 +90,7 @@ scipy==1.16.0
 \checkpoint
 └── deeplabv3_resnet50_coco-cd0a2569.pth
 ```
-3. (optional) You can download our pred-trained models for different tasks:
+3. (optional) You can download our pre-trained models for different tasks:
 + [Cardiac LGE] :  [Google Driver](https://drive.google.com/drive/folders/12ZEjJqhYFXaMU5ZI2S4CgA0xRB4sXoKr?usp=drive_link)
 
 After downloading, update the path accordingly in the test script.
