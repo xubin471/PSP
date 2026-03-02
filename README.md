@@ -92,7 +92,7 @@ scipy==1.16.0
 ```
 3. (optional) You can download our pre-trained models for different tasks:
 + [Cardiac LGE] :  [Google Driver](https://drive.google.com/drive/folders/12ZEjJqhYFXaMU5ZI2S4CgA0xRB4sXoKr?usp=drive_link)
-+ [Cardiac bssFP] : [Google Driver](https://drive.google.com/drive/folders/12ZEjJqhYFXaMU5ZI2S4CgA0xRB4sXoKr?usp=sharing)
++ [Cardiac bssFP] : [Google Driver](https://drive.google.com/drive/folders/1ij4TuT9sFXSVrSRiUNmoaQ-y1Q5V1ftX?usp=sharing)
 
 After downloading, update the path accordingly in the test script.
 
