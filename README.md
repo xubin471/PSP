@@ -91,6 +91,7 @@ scipy==1.16.0
 └── deeplabv3_resnet50_coco-cd0a2569.pth
 ```
 3. (optional) You can download our pre-trained models for different tasks:
++ [Abdomen CT] : [Google Driver](https://drive.google.com/drive/folders/16S_gAnRdzgz_KqRUC1fhmV170IdN9AuF?usp=sharing)
 + [Abdomen MR] : [Google Driver](https://drive.google.com/drive/folders/1vvf0iW7vrKUtfGFakURHFxRRK551i9oK?usp=sharing)
 + [Cardiac LGE] :  [Google Driver](https://drive.google.com/drive/folders/12ZEjJqhYFXaMU5ZI2S4CgA0xRB4sXoKr?usp=drive_link)
 + [Cardiac bssFP] : [Google Driver](https://drive.google.com/drive/folders/1ij4TuT9sFXSVrSRiUNmoaQ-y1Q5V1ftX?usp=sharing)
