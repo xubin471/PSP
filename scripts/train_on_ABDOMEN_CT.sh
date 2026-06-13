@@ -7,7 +7,7 @@ SOURCE_DATASET='ABDOMEN_CT'
 
 NWORKER=16
 RUNS=1
-ALL_EV=(0 1 2 3 4) # 5-fold cross validation (0, 1, 1, 3, 4)
+ALL_EV=(0 1 2 3 4) # 5-fold cross validation (0, 1, 2, 3, 4)
 #TEST_LABEL=[1,2,3,6]
 EXCLUDE_LABEL=None  # Setting 1
 
