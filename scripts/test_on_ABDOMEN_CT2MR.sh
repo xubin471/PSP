@@ -19,7 +19,7 @@ SNAPSHOT_INTERVAL=1000 # interval for saving snapshot
 SEED=2026
 
 N_PART=3 # defines the number of chunks for evaluation
-ALL_SUPP=(2) # CHAOST2: 0-4, CMR: 0-7
+ALL_SUPP=(2) # follow FAMNet
 model_id=(30000)
 echo ========================================================================
 for id in "${model_id[@]}"
