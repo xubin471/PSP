@@ -7,11 +7,11 @@ TARGET_DATASET='ABDOMEN_CT'
 
 NWORKER=0
 RUNS=1
-ALL_EV=(0 1 2 3 4) # 5-fold cross validation (0, 1, 1, 3, 4)
+ALL_EV=(0 1 2 3 4) # 5-fold cross validation (0, 1, 2, 3, 4)
 TEST_LABEL=[1,2,3,6]
-#TEST_LABEL="'[1,2,3,4]'"
+
 ###### Training configs ######
-NSTEP=50000
+NSTEP=30001
 DECAY=0.98
 
 MAX_ITER=5000 # defines the size of an epoch
@@ -19,13 +19,9 @@ SNAPSHOT_INTERVAL=1000 # interval for saving snapshot
 SEED=2026
 
 N_PART=3 # defines the number of chunks for evaluation
-ALL_SUPP=(2) # CHAOST2: 0-4, CMR: 0-7
+ALL_SUPP=(2) # follow FAMNnet
 model_id=(30000)
-#model_id=($(seq 50000 -1000 1000))
 echo ========================================================================
-
-
-
 for id in "${model_id[@]}"
 do
   rm -rf results.txt
