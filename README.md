@@ -565,3 +565,14 @@ To demonstrate the superiority of our model, we compared the visual segmentation
 ## 🌹Acknowledgements
 <font style="color:rgb(31, 35, 40);">Our code is built upon the works of </font>[<font style="color:rgb(9, 105, 218);">SSL-ALPNet</font>](https://github.com/cheng-01037/Self-supervised-Fewshot-Medical-Image-Segmentation)<font style="color:rgb(31, 35, 40);">, </font>[<font style="color:rgb(9, 105, 218);">ADNet</font>](https://github.com/sha168/ADNet)<font style="color:rgb(31, 35, 40);"> and </font>[<font style="color:rgb(9, 105, 218);">QNet</font>](https://github.com/ZJLAB-AMMI/Q-Net)<font style="color:rgb(31, 35, 40);">, we appreciate the authors for their excellent contributions!</font>
 
+# Citation
+If you find our work useful in your research, please consider citing:
+```
+@inproceedings{PSP,
+  title={PSP: Harnessing Position and Shape Priors for Cross-Domain Few-Shot Medical Image Segmentation},
+  author={Xu, Bin and Zhu, Yazhou and Zhang, Haofeng},
+  booktitle={MICCAI},
+  pages={468--478},
+  year={2026},
+}
+```
